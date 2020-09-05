@@ -25,13 +25,15 @@ Things you may want to cover:
 
 # テーブル設計
 
-##users テーブル
+## users テーブル
+
 | Column    | Type    | Options    |
 | --------- | string  | null:false |
 | name      | string  | null:false |
 | password  | string  | null:false |
 
 ### Association
+
 - has_many :room_users
 - has_many :rooms, through: room_users
 - has_many :messages
@@ -40,17 +42,18 @@ Things you may want to cover:
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name  | string | null: false |
+| name   | string | null: false |
 
-###Association
+### Association
+
 - has_many :room_users
 - has_many :users, through: room_users
 - has_many :messages
 
 ## room_users テーブル
 
-| Column  | Type    | Options                        |
-| ------- | ------- | ------------------------------ |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
 | user_id | references | null: false, foreign_key: true |
 | room_id | references | null: false, foreign_key: true |
 
@@ -61,9 +64,9 @@ Things you may want to cover:
 
 ## messages テーブル
 
-| Column  | Type    | Options                        |
-| ------- |  ------- | ------------------------------ |
-| content    | string  |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
 | user_id | references | null: false, foreign_key: true |
 | room_id | references | null: false, foreign_key: true |
 
